@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>Introduction Main</title>
+        <meta name="tags" content="intro main" />
+        <meta name="date" content="2015-04-21 22:28" />
+        <meta name="modified" content="2015-04-21  23:14" />
+        <meta name="category" content="introduction" />
+        <meta name="summary" content="web site introduction" />
+    </head>
+    <body>
+        <style type="text/css">
+        div.row .box-title {
+            padding-top: 0.2em;
+            padding-bottom: 0.2em;
+            font-size: 2em;
+            color: #CCC;
+        }
+
+        div.row .read-more a, #slider .nivo-directionNav a, a.read-more {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        div.row .read-more:hover, #slider .nivo-directionNav a:hover, a.read-more:hover {
+            background: #1b1b1b;    
+        }
+
+        div.row .read-more, #slider .nivo-directionNav a, a.read-more {
+            color: #FFF;
+            background: none repeat scroll 0% 0% #F30;
+            padding: 2px 6px;
+            border-radius: 3px;
+            display: inline-block;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: capitalize;
+            cursor: pointer;
+            margin-left: 0.2em;
+        }
+
+        #content .read-more a {
+            color: white;
+        }
+        </style>
+        <section style="height: 80vh;">
+            <div class="container-fluid" style="height: 100%;">
+                <div class="slideshow" style="margin-bottom:2%; height: 40%">
+                    <div id="wrapper">
+                        <script type="text/javascript" src="static/nivo-slider/jquery.nivo.slider.js"></script>
+                        <link rel="stylesheet" href="static/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+                        <style type="text/css">
+                            .nivo-controlNav {
+                                display: none;
+                        }
+                        </style>
+                        <div class="slider-wrapper theme-default">
+                            <div id="slider" class="nivoSlider">
+                                <img src="static/images/introduction/slide1.png" style="max-height: 100%" alt="Le gang des didaf" title="#qui-on-est"/>
+                                <img src="static/images/introduction/slide2.png" style="max-height: 100%" alt="Le son des didaf" title="#ce-qu-on-fait"/>
+                            </div>
+                            <div id="qui-on-est" class="nivo-html-caption">
+                                <a href="#/1" style="color: #FFF;text-decoration: none;text-align: right;">
+                                    Le gang des didaf: qui on est, ce qu'on fait...
+                                </a>
+                            </div>
+                            <div id="ce-qu-on-fait" class="nivo-html-caption">
+                                <a href="#/2" style="color: #FFF;text-decoration: none;text-align: right;">
+                                    Le son des didaf: des extraits, et des fonts de cuve
+                                </a>
+                            </div>
+                            <script type="text/javascript">
+                                $('#slider').nivoSlider({
+                                    prevText: '<',
+                                    nextText: '>',
+                                    animSpeed: 500,
+                                    pauseTime: 5000,
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="height: 40%">
+                    <div class="col-xs-4" style="padding-right: 4%">
+                        <a href="#/5">
+                            <img src="static/images/introduction/micro.png" class="img-responsive" alt="Textes">
+                        </a>
+                        <div class="col-xs-4 text-left box-title" style="width:100%">
+                            Textes
+                        </div>
+                        <div class="box-content text-left">
+                            Ce qu'on dit, ce qu'on pense... ou pas                    
+                            <span class="read-more">
+                                <a href="#/5">Plus d'infos</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-4" style="padding-right: 2%; padding-left: 2%">
+                        <a href="#/3">
+                            <img src="static/images/introduction/cables.png" class="img-responsive" alt="News">
+                        </a>
+                        <div class="text-left box-title" style="width:100%">
+                            News
+                        </div>
+                        <div class="box-content text-left">
+                            Nos événements, notre programme du week-end... 
+                            <span class="read-more">
+                                <a href="#/3">Plus d'infos</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-4" style="padding-left:4%">
+                        <a href="#/4">
+                            <img src="static/images/introduction/batterie.png" class="img-responsive" alt="Photos">
+                        </a>
+                        <div class="text-justify box-title" style="width:100%">
+                            Photos
+                        </div>
+                        <div class="box-content text-left" style="width:100%">
+                            Des photos, des videos où on est tout beau tout gentil 
+                            <span class="read-more">
+                                <a href="#/4">Plus d'infos</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Contact Main</title>
+        <meta name="tags" content="contact main" />
+        <meta name="date" content="2015-04-21 22:28" />
+        <meta name="modified" content="2015-04-21  23:14" />
+        <meta name="category" content="contact" />
+        <meta name="summary" content="web site contact" />
+    </head>
+    <body>
+        <section>
+        <div class="container-fluid text-left">
+            <div class="row">
+                    <p>Vous pouvez contacter JC au 06 37 77 80 72.</p>
+                    <p>Vous pouvez aussi nous contacter via <a id="lienAdresse" href="" class="inverted">e-mail</a> ou nous laisser un message sur ce site (via disquss) ou sur notre facebook.</p>
+                    <a onclick="voirAdresse(); return false;" href="mailto:" class="inverted" id="voirAdresseBouton">Clicker ici pour voir notre adresse e-mail.</a>
+                    <br/>
+                    <br/>
+                    <form id="contactform" class="form-inline" method="post" enctype="text/plain">
+                        <div class="form-group col-xs-12">
+                            <label for="email" class="sr-only">Email</label>
+                            <input class="form-control" id="email" style="width: 100%; margin-bottom:1vh" type="text" name="email" placeholder="Votre nom ou email">
+                        </div>
+                        <br/>
+                        <div class="form-group col-xs-12">
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea class="form-control" rows="3" style="width: 100%; margin-bottom:1vh" id="message" name="message" placeholder="Votre message" id="message"></textarea>
+                        </div>
+                        <br/>
+                        <div class="form-group col-xs-12">
+                            <input type="submit" value="Envoyer" style="width: 100%" class="btn btn-default">
+                        </div>
+                    </form>
+            </div>
+        </div>
+        <script  type="text/javascript">
+        function voirAdresse() {
+            adresse = "didafta";
+            adresse += "@"
+            document.getElementById('voirAdresseBouton').setAttribute('style', 'display:none');
+            document.getElementById('lienAdresse').innerHTML = adresse + "gmail.com";
+            document.getElementById('lienAdresse').setAttribute("href", "mailto:" + adresse + "gmail.com");
+            document.getElementById('contactform').setAttribute("action", "mailto:" + adresse + "gmail.com");
+        }
+        </script>
+        </section>
+    </body>
+</html>

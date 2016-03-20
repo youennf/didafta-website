@@ -1,0 +1,13 @@
+<div id="side-left">
+    <aside>
+      <section class="left-links">
+         {% for href, class, onclick in LEFT_LINKS %}
+             <li>
+               <a class="left-link-item" href="{{ link }}" onclick=" {{ onclick }}">{{ title }}
+                  <i class=" {{ class }}"></i>
+               </a>
+            </li>
+         {% endfor %}
+      </section>
+   </aside>
+</div>

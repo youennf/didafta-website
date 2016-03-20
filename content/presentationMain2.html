@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Presentation Main 2</title>
+        <meta name="tags" content="intro" />
+        <meta name="date" content="2015-04-21 22:28" />
+        <meta name="modified" content="2015-04-21  23:14" />
+        <meta name="category" content="presentation" />
+        <meta name="summary" content="Didaf'Ta presentation" />
+    </head>
+    <body>
+        <script type="text/javascript">
+            var current = false;
+            function toggleMaximize(target) {
+                $('.maximizable').removeClass('maximize');
+                if (current) {
+                    $(current).css({
+                        'background-color': 'inherit',
+                        'font-size': 'inherit',
+                        'font-family': 'inherit',
+                        'line-height': 'inherit',
+                    });
+                }
+                if (current == target) {
+                    current = false;
+                    return;
+                }
+                current = target;
+                $(target).toggleClass('maximize');
+                $(target).css({
+                    'background-color': 'rgba(3,3,3,0.9)',
+                    'font-size': '2.5em',
+                    'line-height': '1.2em',
+                    'font-family': 'one_stroke_script_letplain',
+                });
+            }
+            $( document ).ready(function() {
+                $('.maximizable').click(function(event) {
+                    toggleMaximize(event.target);
+                });
+            });
+        </script>
+        <section class="centered-items">
+            <div class="container-fluid">
+                <div class="row centered-items image-gallery" style="height:30%;">
+                    <div class="col-xs-4 text-center my-text-overflow maximizable">
+                        Nous, c’est les didaf, eux les didaf’ta !<br>
+                        Nous, on a la taille de capsules de bière,<br>
+                        Eux, des capsules, ils en ont vu des tas,<br>
+                        Et ça ne date surement pas d’hier.
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="static/images/didaf/batman.png" title="batman" data-gallery="didaf">
+                            <img src="static/images/didaf/batman-150x150.png" class="img-rounded img-responsive" alt="batman">
+                        </a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="static/images/didaf/basman.png" title="basman" data-gallery="didaf">
+                            <img src="static/images/didaf/basman-150x150.png" class="img-rounded img-responsive" alt="basman">
+                        </a>
+                    </div>
+                </div>
+                <div class="row centered-items image-gallery" style="height:30%">
+                    <div class="col-xs-4">
+                        <a href="static/images/didaf/barman.png" title="barman" data-gallery="didaf">
+                            <img src="static/images/didaf/barman-150x150.png" class="img-rounded img-responsive" alt="barman">
+                        </a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="static/images/didaf/badman.png" title="badman" data-gallery="didaf">
+                            <img src="static/images/didaf/badman-150x150.png" class="img-rounded img-responsive" alt="badman">
+                        </a>
+                    </div>
+                    <div class="col-xs-4 text-center my-text-overflow maximizable">
+                        Un samedi, on ne savait pas trop quoi faire.<br>
+                        On a vite pensé à une brasserie de bons bretons<br>
+                        Pour la prise de mousse, ce sont les experts,<br>
+                        On s’est trouvé embouteillé pour de bon.
+                    </div>
+                </div>
+                <div class="row centered-items image-gallery" style="height:30%">
+                    <div class="col-xs-4">
+                        <a href="static/images/didaf/bagman.png" title="bagman" data-gallery="didaf">
+                            <img src="static/images/didaf/bagman-150x150.png" class="img-rounded img-responsive" alt="bagman">
+                        </a>
+                    </div>
+                    <div class="col-xs-4 text-center my-text-overflow maximizable">
+                        Le six-pack est leur ami,<br>
+                        Et c’est pour la vie.
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="static/images/didaf/bafman.png" title="bafman" data-gallery="didaf">
+                            <img src="static/images/didaf/bafman-150x150.png" class="img-rounded img-responsive" alt="bafman">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

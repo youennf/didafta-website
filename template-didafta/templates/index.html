@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block content %}
+    <link href="static/reveal.js/css/reveal.css" rel="stylesheet" type="text/css"/>
+    <div class="myControls">
+        <div class="navigate-left"><i class="fa fa-arrow-left"></i></div>
+        <div class="navigate-right"><i class="fa fa-arrow-right"></i></div>
+        <div class="navigate-up"><i class="fa fa-arrow-up"></i></div>
+        <div class="navigate-down"><i class="fa fa-arrow-down"></i></div>
+    </div>
+    <div class="reveal"><div class="slides">
+    {% if articles %}
+        {% for itemType, itemDescription, isRaw in MAIN_ITEMS %}
+	        <section id="{{ itemType }}">
+	            {% if itemDescription %}
+		            <div class="stickyDescription">
+		                {{ itemDescription }}
+		            </div>
+	            {% endif %}
+	            {% for category, articles in categories %}
+		            {% if category == itemType %}
+		            {% for article in articles %}
+			            {% if isRaw %}
+			                {{ article.content }}
+					    {% else %}
+			            <section>
+					        <article>
+					            <header class="page-header">
+					                <h1>
+					                    <a href="{{ SITEURL }}/{{ article.url }}"
+					                       rel="bookmark"
+					                       title="Permalink to {{ article.title|striptags }}">
+					                        {{ article.title }}
+					                    </a>
+									    <span class="published">
+									        <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+									    </span>
+					                </h1>
+					            </header>
+					            <div class="entry-content">
+					                {{ article.content }}
+					            </div>
+					            <!-- /.entry-content -->
+					            {% include 'includes/related-posts.html' %}
+					            {% include 'includes/addthis.html' %}
+					            {% include 'includes/shariff.html' %}
+					            {% include 'includes/comments.html' %}
+					        </article>
+			            </section>
+			            {% endif %}
+		            {% endfor %}
+		            {% endif %}
+	            {% endfor %}
+	        </section>
+        {% endfor %}
+    {% endif %}
+    </div></div>
+	<script type="text/javascript" src="static/reveal.js/js/reveal.js"></script>
+	<script type="text/javascript">
+	    function startReveal() {
+	        Reveal.initialize({
+	            width: "1000px",
+	            height: "1000px",
+	            controls: false,
+	            progress: false,
+	            slideNumber: false,
+	            history: true,
+	            keyboard: true,
+	            overview: false,
+	            center: true,
+	            touch: true,
+	            loop: false,
+	            rtl: false,
+	            fragments: true,
+	            //embedded: false,
+	            help: false,
+	            autoSlide: 0,
+	            autoSlideStoppable: true,
+	            mouseWheel: false,
+	            hideAddressBar: true,
+	            previewLinks: true,
+	            transition: 'default', // none/fade/slide/convex/concave/zoom
+	            transitionSpeed: 'default', // default/fast/slow
+	            backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+	            viewDistance: 3,
+	            parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+	            parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+	        });
+	    }
+	    startReveal();
+
+
+	    function checkHash()
+	    {
+	        $(".menubar a" ).removeClass("activated");
+	        hash = window.location.hash.substring(0,3);
+	        if (hash == '#/0')
+	            hash = '#/'
+	        $(".menubar a[href='/" + hash + "']").addClass("activated");
+	    }
+	    checkHash();
+	    $(window).bind('hashchange', checkHash);
+
+	</script>
+{% endblock content %}
